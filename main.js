@@ -1,8 +1,8 @@
-mustacheX=0;
-mustacheY=0;
+noseX=0;
+noseY=0;
 
 function preload() {
-  mustache = loadImage('moostache.jpg');
+  clown_nose = loadImage('https://i.postimg.cc/3x3QzSGq/m.png');
 }
 
 function setup() {
@@ -25,14 +25,14 @@ function gotPoses(results)
   if(results.length > 0)
   {
     console.log(results);
-    mustacheX = results[0].pose.mustache.x-15;
-    mustacheY = results[0].pose.mustache.y-15;
+    noseX = results[0].pose.nose.x-40;
+    noseY = results[0].pose.nose.y;
   }
 }
 
 function draw() {
   image(video, 0, 0, 300, 300);
-  image(mustache, mustacheX, mustacheY, 30, 30);
+  image(clown_nose, noseX, noseY, 80, 35);
 }
 
 function take_snapshot(){    
